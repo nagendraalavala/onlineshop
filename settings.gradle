@@ -1,1 +1,5 @@
 rootProject.name = 'onlineshop'
+include "applications:onlineshop"
+include "components:appusers"
+include "components:products"
+include "components:transactions"

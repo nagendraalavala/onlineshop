@@ -1,7 +1,7 @@
 ---
 applications:
   - name: onlineshop
-    path: build/libs/onlineshop-1.0-SNAPSHOT.war
+    path: applications/onlineshop/build/libs/onlineshop-1.0-SNAPSHOT.war
     routes:
       - route: PRO-onlineshop.apps.pcf.paltraining.perficient.com
     services:
