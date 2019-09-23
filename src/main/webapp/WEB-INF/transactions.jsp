@@ -86,7 +86,7 @@
 
     <thead>
     <tr>
-      <td><b>USER_ID</b></td>
+      <td><b>USERID</b></td>
       <td><b>PRODUCT_ID</b></td>
       <td><b>TRANSACTION_DATE</b></td>
     </tr>
