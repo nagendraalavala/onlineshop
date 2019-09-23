@@ -9,27 +9,27 @@ import java.io.Serializable;
 @Entity
 public class Transaction implements Serializable {
     private static final long serialVersionUID=1L;
-    private String userid;
-    private String pdid;
+    private Long userid;
+    private Long pdid;
     private String tdate;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    public String getUserid() {
+    public Long getUserid() {
         return userid;
     }
 
-    public void setUserid(String userid) {
+    public void setUserid(Long userid) {
         this.userid = userid;
     }
 
-    public String getPdid() {
+    public Long getPdid() {
         return pdid;
     }
 
-    public void setPdid(String pdid) {
+    public void setPdid(Long pdid) {
         this.pdid = pdid;
     }
 
@@ -49,7 +49,7 @@ public class Transaction implements Serializable {
         this.id = id;
     }
 
-    public Transaction(String userid, String pdid, String tdate) {
+    public Transaction(Long userid, Long pdid, String tdate) {
         this.userid = userid;
         this.pdid = pdid;
         this.tdate = tdate;

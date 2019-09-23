@@ -43,12 +43,12 @@ public class Product implements Serializable {
         this.pdcost = pdcost;
     }
 
-    public String getPddesc() {
+    public String getPddescp() {
         return pddescp;
     }
 
-    public void setPddesc(String pddesc) {
-        this.pddescp = pddesc;
+    public void setPddescp(String pddescp) {
+        this.pddescp = pddescp;
     }
 
     public  int getPdquantity() {
@@ -63,7 +63,7 @@ public class Product implements Serializable {
         this.category = category;
         this.pdname = pdname;
         this.pdcost = pdcost;
-        this.pddescp = pddesc;
+        this.pddescp = pddescp;
         this.pdquantity = pdquantity;
     }
 
