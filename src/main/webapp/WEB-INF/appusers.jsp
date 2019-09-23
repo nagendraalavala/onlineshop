@@ -80,27 +80,27 @@
 
 <div class="container">
 
-    <h1>Transactions</h1>
+    <h1>USERS</h1>
     <table class="table table-striped table-bordered">
 
 
         <thead>
         <tr>
-            <td><b>category</b></td>
-            <td><b>ProductaName</b></td>
-            <td><b>Cost</b></td>
-            <td><b>Description</b></td>
-            <td><b>Quantity</b></td>
+            <td><b>Name</b></td>
+            <td><b>Email</b></td>
+            <td><b>Password</b></td>
+            <td><b>Address</b></td>
+
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${requestScope.products}" var="product">
+        <c:forEach items="${requestScope.appusers}" var="appuser">
             <tr>
-                <td> ${product.category} </td>
-                <td> ${product.pdname} </td>
-                <td> ${product.pdcost} </td>
-                <td> ${product.pddescp} </td>
-                <td> ${product.pdquantity} </td>
+                <td> ${appuser.name} </td>
+                <td> ${appuser.email} </td>
+                <td> ${appuser.password} </td>
+                <td> ${appuser.address} </td>
+
             </tr>
         </c:forEach>
         </tbody>
