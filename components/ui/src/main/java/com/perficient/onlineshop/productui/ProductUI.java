@@ -1,33 +1,25 @@
-package com.perficient.onlineshop.product;
+package com.perficient.onlineshop.productui;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.io.Serializable;
+public class ProductUI {
+    private static final long serialVersionUID = 1L;
 
-@Entity
-public class Product implements Serializable {
-    private static final long serialVersionUID=1L;
     private String category;
     private String pdname;
     private double pdcost;
     private String pddescp;
     private  int pdquantity;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    public Product(String category, String pdname, double pdcost, String pddescp, int pdquantity) {
+    public ProductUI() {
+    }
+
+    public ProductUI(String category, String pdname, double pdcost, String pddescp, int pdquantity) {
         this.category = category;
         this.pdname = pdname;
         this.pdcost = pdcost;
         this.pddescp = pddescp;
         this.pdquantity = pdquantity;
     }
-
-    public Product() {}
 
     public String getCategory() {
         return category;
@@ -76,6 +68,5 @@ public class Product implements Serializable {
     public void setId(Long id) {
         id = id;
     }
+
 }
-
-

@@ -1,4 +1,4 @@
-package com.perficient.onlineshop.product;
+package com.perficient.onlineshop.transaction;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,25 +8,25 @@ import java.util.Iterator;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/products")
-public class ProductController {
+@RequestMapping("/transactions")
+public class TransactionController {
 
-    private ProductRepo productRepo;
+    private TransRepo transactionRepo;
 
-    public ProductController(ProductRepo productRepo) {
-        this.productRepo = productRepo;
+    public TransactionController(TransRepo transactionRepo) {
+        this.transactionRepo = transactionRepo;
     }
 
     @PostMapping
-    public ResponseEntity<Product> create(@RequestBody Product product) {
-        productRepo.save(product);
+    public ResponseEntity<Transaction> create(@RequestBody Transaction transaction) {
+        transactionRepo.save(transaction);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Product> delete(@PathVariable Long id) {
-        Optional<Product> doomed = productRepo.findById(id);
-        if (doomed.isPresent()) productRepo.delete(doomed.get());
+    public ResponseEntity<Transaction> delete(@PathVariable Long id) {
+        Optional<Transaction> doomed = transactionRepo.findById(id);
+        if (doomed.isPresent()) transactionRepo.delete(doomed.get());
         HttpStatus status = (doomed.isPresent()) ? HttpStatus.NO_CONTENT : HttpStatus.NOT_FOUND;
         return new ResponseEntity<>(status);
     }
@@ -34,35 +34,35 @@ public class ProductController {
     @GetMapping("/count")
     public long count()
     {
-        return productRepo.count();
+        return transactionRepo.count();
     }
 
     @GetMapping()
-    public Iterable<Product> read(){
-        return productRepo.findAll();
+    public Iterable<Transaction> read(){
+        return transactionRepo.findAll();
     }
 //
 //    @GetMapping()
-//    public Iterable<Product> read(
+//    public Iterable<Transaction> read(
 //            @RequestParam(value = "field", required = false) String field,
 //            @RequestParam(value = "key", required = false) String key
 //    ){
 //        if (field != null && key != null) {
 //            switch (field){
 //                case "name":
-//                    return productRepo.findAllByName(key);
+//                    return transactionRepo.findAllByName(key);
 //                case "email":
-//                    return productRepo.findAllByEmail(key);
+//                    return transactionRepo.findAllByEmail(key);
 //                default:
-//                    return new Iterable<Product>() {
+//                    return new Iterable<AppUser>() {
 //                        @Override
-//                        public Iterator<Product> iterator() {
+//                        public Iterator<AppUser> iterator() {
 //                            return null;
 //                        }
 //                    };
 //            }
 //        } else {
-//            return productRepo.findAll();
+//            return transactionRepo.findAll();
 //        }
 //    }
 

@@ -1,22 +1,22 @@
-package com.example.onlineshop;
+package com.perficient.onlineshop;
 
 
-import com.perficient.onlineshop.appuser.AppUserRepo;
-import com.perficient.onlineshop.product.ProductRepo;
-import com.perficient.onlineshop.transaction.TransRepo;
+import com.perficient.onlineshop.appuserui.AppUserClient;
+import com.perficient.onlineshop.productui.ProductClient;
+import com.perficient.onlineshop.transactionui.TransactionClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class RootController {
-    private AppUserRepo appUserRepo;
-    private ProductRepo productRepo;
-    private TransRepo transRepo;
+    private AppUserClient appUserClient;
+    private ProductClient productClient;
+    private TransactionClient transactionClient;
 
-    public RootController(AppUserRepo appUserRepo, ProductRepo productRepo, TransRepo transRepo) {
-        this.appUserRepo = appUserRepo;
-        this.productRepo = productRepo;
-        this.transRepo = transRepo;
+    public RootController(AppUserClient appUserClient, ProductClient productClient, TransactionClient transactionClient) {
+        this.appUserClient = appUserClient;
+        this.productClient = productClient;
+        this.transactionClient = transactionClient;
     }
     @GetMapping("/")
     public String rootPath()
