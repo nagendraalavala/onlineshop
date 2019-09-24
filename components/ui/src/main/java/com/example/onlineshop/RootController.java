@@ -1,16 +1,11 @@
-package com.perficient.onlineshop;
+package com.example.onlineshop;
 
 
-import com.perficient.onlineshop.appuser.AppUserInitialList;
 import com.perficient.onlineshop.appuser.AppUserRepo;
-import com.perficient.onlineshop.product.ProductInitialList;
 import com.perficient.onlineshop.product.ProductRepo;
 import com.perficient.onlineshop.transaction.TransRepo;
-import com.perficient.onlineshop.transaction.TransactionInitialList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.Map;
 
 @Controller
 public class RootController {

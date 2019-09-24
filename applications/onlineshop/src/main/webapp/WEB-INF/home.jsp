@@ -30,13 +30,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- Le styles -->
+
   <link href="../assets/css/bootstrap.css" rel="stylesheet">
   <link href="../assets/css/movie.css" rel="stylesheet">
   <style>
     body {
       padding-top: 60px;
-      /* 60px to make the container go all the way to the bottom of the topbar */
+
     }
   </style>
   <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -51,7 +51,7 @@
          data-target=".nav-collapse"> <span class="icon-bar"></span> <span
           class="icon-bar"></span> <span class="icon-bar"></span>
       </a> <a class="brand" href="#">onlineshop</a>
-      <!--/.nav-collapse -->
+
     </div>
   </div>
 </div>
@@ -66,6 +66,6 @@
   <a href="transactions">Transactions</a> <br/>
 
 </div>
-<!-- /container -->
+
 </body>
 </html>

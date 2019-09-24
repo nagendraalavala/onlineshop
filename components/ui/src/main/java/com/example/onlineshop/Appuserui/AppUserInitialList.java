@@ -1,5 +1,6 @@
-package com.perficient.onlineshop.appuser;
+package com.example.onlineshop.Appuserui;
 
+import com.perficient.onlineshop.appuser.AppUser;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
