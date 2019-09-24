@@ -14,7 +14,7 @@ public class ProductController {
     }
     @GetMapping("/products")
     public String allProducts(Map<String,Object> model) {
-        model.put("products", productClient.findAll());
+        model.put("products", productClient.getAll());
         return "products";
     }
 }

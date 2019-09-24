@@ -2,10 +2,15 @@ package com.perficient.onlineshop;
 
 
 import com.perficient.onlineshop.appuserui.AppUserClient;
+import com.perficient.onlineshop.appuserui.AppUserInitialList;
 import com.perficient.onlineshop.productui.ProductClient;
+import com.perficient.onlineshop.productui.ProductInitialList;
 import com.perficient.onlineshop.transactionui.TransactionClient;
+import com.perficient.onlineshop.transactionui.TransactionInitialList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.Map;
 
 @Controller
 public class RootController {
@@ -24,15 +29,15 @@ public class RootController {
         return "home";
     }
 
-//    @GetMapping("/setup")
-//    public String setupDatabase(Map<String, Object> model, AppUserInitialList appUserInitialList, ProductInitialList productInitialList, TransactionInitialList transactionInitialList) {
-//        appUserInitialList.asList().forEach(appUserRepo::save);
-//        productInitialList.asList().forEach(productRepo::save);
-//        transactionInitialList.asList().forEach(transRepo::save);
-//        model.put("appusers", appUserRepo.findAll());
-//        model.put("products", productRepo.findAll());
-//        model.put("transactions", transRepo.findAll());
-//        return "setup";
-//    }
+    @GetMapping("/setup")
+    public String setupDatabase(Map<String, Object> model, AppUserInitialList appUserInitialList, ProductInitialList productInitialList, TransactionInitialList transactionInitialList) {
+        appUserInitialList.asList().forEach(appUserClient::create);
+        productInitialList.asList().forEach(productClient::create);
+        transactionInitialList.asList().forEach(transactionClient::create);
+        model.put("appusers", appUserClient.getAll());
+        model.put("products", productClient.getAll());
+        model.put("transactions", transactionClient.getAll());
+        return "setup";
+    }
 
 }

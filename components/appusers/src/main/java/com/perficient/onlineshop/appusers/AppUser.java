@@ -1,7 +1,4 @@
-package com.perficient.onlineshop.appuser;
-
-import com.sun.javafx.beans.IDProperty;
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
+package com.perficient.onlineshop.appusers;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.perficient.onlineshop.appuser;
+package com.perficient.onlineshop.appusers;
 
 import org.springframework.data.repository.CrudRepository;
 

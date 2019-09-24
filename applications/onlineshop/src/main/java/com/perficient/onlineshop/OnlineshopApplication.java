@@ -14,12 +14,12 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class OnlineshopApplication {
 
-	@Value("${appusers.ms.url")
-	private String appUserURL;
-	@Value("${products.ms.url")
-	private String productURL;
-	@Value("${transactions.ms.url")
-	private String transactionURL;
+	@Value("${appusers.ms.url}")
+	private String appUsersURL;
+	@Value("${products.ms.url}")
+	private String productsURL;
+	@Value("${transactions.ms.url}")
+	private String transactionsURL;
 
 	public static void main(String[] args)
 	{
@@ -32,15 +32,15 @@ public class OnlineshopApplication {
 	}
 	@Bean
 	public AppUserClient appUserClient(RestOperations restOperations) {
-		return new AppUserClient(appUserURL, restOperations);
+		return new AppUserClient(appUsersURL, restOperations);
 	}
 	@Bean
 	public ProductClient productClient(RestOperations restOperations) {
-		return new ProductClient(productURL, restOperations);
+		return new ProductClient(productsURL, restOperations);
 	}
 	@Bean
 	public TransactionClient transactionClient(RestOperations restOperations) {
-		return new TransactionClient(transactionURL, restOperations);
+		return new TransactionClient(transactionsURL, restOperations);
 	}
 
 }

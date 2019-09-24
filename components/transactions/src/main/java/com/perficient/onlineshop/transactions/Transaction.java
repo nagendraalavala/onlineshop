@@ -1,4 +1,4 @@
-package com.perficient.onlineshop.transaction;
+package com.perficient.onlineshop.transactions;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

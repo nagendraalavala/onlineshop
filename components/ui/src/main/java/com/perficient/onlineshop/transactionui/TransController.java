@@ -14,7 +14,7 @@ public class TransController {
     }
     @GetMapping("/transactions")
     public String allTransactions(Map<String,Object> model) {
-        model.put("transactions", transactionClient.findAll());
+        model.put("transactions", transactionClient.getAll());
         return "transactions";
     }
 }
