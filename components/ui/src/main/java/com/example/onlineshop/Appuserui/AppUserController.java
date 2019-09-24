@@ -16,7 +16,7 @@ public class AppUserController {
     }
     @GetMapping("/appusers")
     public String allAppUsers(Map<String,Object> model) {
-        model.put("appusers", appuserClient.findAll());
+        model.put("appusers", appuserClient.getAll());
         return "appusers";
     }
 }
