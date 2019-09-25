@@ -24,11 +24,14 @@ public class AppUserClient {
     public List<AppUserUI> getAll() {
         return restOperations.exchange(appUsersURL, HttpMethod.GET, null, appUserListType).getBody();
     }
-//
-//    public void delete(Long id) {
-//        String deleteURL = new StringBuilder(appUserURL).append("/").append(id).toString();
-//        restOperations.delete(deleteURL);
-//    }
+
+
+
+
+    public AppUserUI view(Long id) {
+        String viewURL = new StringBuilder(appUsersURL).append("/").append(id).toString();
+        return restOperations.getForObject(viewURL, AppUserUI.class);
+    }
 //
 //    public int countAll() {
 //        return restOperations.getForEntity(appUserURL + "/count", Integer.class).getBody();

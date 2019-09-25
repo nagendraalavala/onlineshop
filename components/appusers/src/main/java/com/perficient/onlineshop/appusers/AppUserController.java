@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/appusers")
@@ -29,6 +30,11 @@ public class AppUserController {
         List<AppUser> ret = new ArrayList<>();
         appUserRepo.findAll().forEach(ret::add);
         return ret;
+    }
+
+    @GetMapping("/{id}")
+    public AppUser view(@PathVariable Long id) {
+        return appUserRepo.findById(id).get();
     }
 
 //    @PostMapping

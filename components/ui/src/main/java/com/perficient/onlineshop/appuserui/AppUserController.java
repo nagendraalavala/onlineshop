@@ -2,7 +2,9 @@ package com.perficient.onlineshop.appuserui;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Map;
 
@@ -18,6 +20,12 @@ public class AppUserController {
     public String allAppUsers(Map<String,Object> model) {
         model.put("appusers", appUserClient.getAll());
         return "appusers";
+    }
+
+    @GetMapping("/appusers/{id}")
+    public String getUser(Map<String,Object> model, @PathVariable Long id) {
+        model.put("viewuser", appUserClient.view(id));
+        return "viewuser";
     }
 //
 //    @GetMapping("/appuser")

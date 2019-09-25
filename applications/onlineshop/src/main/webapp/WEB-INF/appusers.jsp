@@ -81,6 +81,8 @@
 <div class="container">
 
     <h1>USERS</h1>
+
+
     <table class="table table-striped table-bordered">
 
 
@@ -96,15 +98,17 @@
         <tbody>
         <c:forEach items="${requestScope.appusers}" var="appuser">
             <tr>
-                <td> ${appuser.name} </td>
+                <td><a href="/appusers/${appuser.id}"> ${appuser.name} </a></td>
                 <td> ${appuser.email} </td>
                 <td> ${appuser.password} </td>
                 <td> ${appuser.address} </td>
+
 
             </tr>
         </c:forEach>
         </tbody>
     </table>
+
 
 </div>
 <!-- /container -->

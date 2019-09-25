@@ -82,10 +82,9 @@
 
     <h1>USER</h1>
 
-    <c:out value="${appuser}"/><br/>
-    <c:out value="${appuser.name}"/><br/>
-    <c:out value="${appuser.id}"/><br/>
-
+    <c:out value="${viewuser.id}"/><br/>
+    <c:out value="${viewuser.name}"/><br/>
+    <c:out value="${viewuser.email}"/><br/>
 
 
 </div>
