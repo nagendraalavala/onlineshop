@@ -23,7 +23,7 @@
              <br/>Password:<label>
              <input type="password" name="password">
          </label>
-             <br/><input type="submit" value="Submit"> </form> </div>
+             <br/><input type="submit1" value="Submit"> </form> </div>
 
      Read more: http://mrbool.com/how-to-create-a-login-form-with-jsp/25685#ixzz60VSBUy3M
 
