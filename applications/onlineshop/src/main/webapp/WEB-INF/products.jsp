@@ -72,6 +72,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </a>
             <a class="brand" href="#">onlineshop</a>
         </div>
@@ -91,6 +92,9 @@
             <td><b>Cost</b></td>
             <td><b>Description</b></td>
             <td><b>Quantity</b></td>
+            <td><b>Buy</b></td>
+
+
         </tr>
         </thead>
         <tbody>
@@ -101,6 +105,7 @@
                 <td> ${product.pdcost} </td>
                 <td> ${product.pddescp} </td>
                 <td> ${product.pdquantity} </td>
+
             </tr>
         </c:forEach>
         </tbody>

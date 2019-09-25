@@ -25,7 +25,7 @@
 <html lang="${language}">
 <head>
   <meta charset="utf-8">
-  <title>onlineshop</title>
+  <title>ONLINESHOP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -58,7 +58,10 @@
 
 <div class="container">
 
-  <h1>onlineshop</h1>
+  <h1>ONLINESHOP</h1>
+  <div align="right">
+    <input type="button" value="Login" />
+  </div>
 
   <p>Please select one of the following links:</p>
   <a href="appusers">AppUsers</a> <br/>
