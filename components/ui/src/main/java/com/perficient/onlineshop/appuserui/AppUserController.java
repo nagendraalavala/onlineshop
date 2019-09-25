@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -27,11 +29,17 @@ public class AppUserController {
         model.put("viewuser", appUserClient.view(id));
         return "viewuser";
     }
+
+//    @DeleteMapping("/appusers")
+//    public String deleteUser(Map<String,Object> model, @RequestParam)
 //
-//    @GetMapping("/appuser")
-//    public String view(@RequestParam(name="id") String id, Map<String,Object> model) {
-//        model.put("appuser", appuserClient.findById(Long.parseLong(id)).get());
-//        return "appuser";
-//    }
+
+
+    @GetMapping("/appusers/delete/{id}")
+    public String deleteUser(Map<String,Object> model, @PathVariable Long id) {
+        appUserClient.delete(id);
+        return "backtoappusers";
+    }
+
 }
 

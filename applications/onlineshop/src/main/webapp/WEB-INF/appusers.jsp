@@ -92,6 +92,7 @@
             <td><b>Email</b></td>
             <td><b>Password</b></td>
             <td><b>Address</b></td>
+            <td></td>
 
         </tr>
         </thead>
@@ -102,6 +103,8 @@
                 <td> ${appuser.email} </td>
                 <td> ${appuser.password} </td>
                 <td> ${appuser.address} </td>
+                <td><a href="/appusers/delete/${appuser.id}"><i
+                            class="icon-trash"></i></a></td>
 
 
             </tr>

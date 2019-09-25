@@ -21,6 +21,12 @@ public class AppUserClient {
         restOperations.postForEntity(appUsersURL, appUserUI, AppUserUI.class);
     }
 
+    public void delete(Long id) {
+        String deleteURL = new StringBuilder(appUsersURL).append("/").append(id).toString();
+        restOperations.delete(deleteURL);
+    }
+
+
     public List<AppUserUI> getAll() {
         return restOperations.exchange(appUsersURL, HttpMethod.GET, null, appUserListType).getBody();
     }

@@ -37,19 +37,21 @@ public class AppUserController {
         return appUserRepo.findById(id).get();
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<AppUser> delete(@PathVariable Long id) {
+        Optional<AppUser> doomed = appUserRepo.findById(id);
+        if (doomed.isPresent()) appUserRepo.delete(doomed.get());
+        HttpStatus status = (doomed.isPresent()) ? HttpStatus.NO_CONTENT : HttpStatus.NOT_FOUND;
+        return new ResponseEntity<>(status);
+    }
+
 //    @PostMapping
 //    public ResponseEntity<AppUser> create(@RequestBody AppUser appUser) {
 //        appUserRepo.save(appUser);
 //        return new ResponseEntity<>(HttpStatus.CREATED);
 //    }
 //
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<AppUser> delete(@PathVariable Long id) {
-//        Optional<AppUser> doomed = appUserRepo.findById(id);
-//        if (doomed.isPresent()) appUserRepo.delete(doomed.get());
-//        HttpStatus status = (doomed.isPresent()) ? HttpStatus.NO_CONTENT : HttpStatus.NOT_FOUND;
-//        return new ResponseEntity<>(status);
-//    }
+
 //
 //    @GetMapping("/count")
 //    public long count()
