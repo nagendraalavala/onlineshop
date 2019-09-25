@@ -20,13 +20,21 @@ jobs:
       deploy:
         provider: releases
         api_key: $GITHUB_OAUTH_TOKEN
-        file: "applications/onlineshop/build/libs/onlineshop-1.0-SNAPSHOT.war"
+        file:
+        - "applications/onlineshop/build/libs/onlineshop-1.0-SNAPSHOT.war"
+        - "applications/appusers-ms/build/libs/appusers-ms-1.0-SNAPSHOT.jar"
+        - "applications/products-ms/build/libs/products-ms-1.0-SNAPSHOT.jar"
+        - "applications/transactions-ms/build/libs/transactions-ms-1.0-SNAPSHOT.jar"
+
         skip_cleanup: true
     - stage: deploy to test
       language: java
       script:
         - echo "Downloading $RELEASE_TAG"
         - wget -P applications/onlineshop/build/libs https://github.com/$GITHUB_USERNAME/onlineshop/releases/download/$RELEASE_TAG/onlineshop-1.0-SNAPSHOT.war
+        - wget -P applications/appusers-ms/build/libs https://github.com/$GITHUB_USERNAME/onlineshop/releases/download/$RELEASE_TAG/appusers-ms-1.0-SNAPSHOT.war
+        - wget -P applications/products-ms/build/libs https://github.com/$GITHUB_USERNAME/onlineshop/releases/download/$RELEASE_TAG/products-ms-1.0-SNAPSHOT.war
+        - wget -P applications/transactions-ms/build/libs https://github.com/$GITHUB_USERNAME/onlineshop/releases/download/$RELEASE_TAG/transactions-ms-1.0-SNAPSHOT.war
       before_deploy:
         - echo "Deploying $RELEASE_TAG to test"
       deploy:
