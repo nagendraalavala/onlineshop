@@ -59,9 +59,7 @@
 <div class="container">
 
   <h1>ONLINESHOP</h1>
-  <div align="right">
-    <input type="button" value="Login" />
-  </div>
+  
 
   <p>Please select one of the following links:</p>
   <a href="appusers">AppUsers</a> <br/>
