@@ -40,11 +40,6 @@ public class ProductController {
     public Iterable<Product> read(){
         return productRepo.findAll();
     }
-
-    @GetMapping("/{id}")
-    public Product view(@PathVariable Long id) {
-        return productRepo.findById(id).get();
-    }
 //
 //    @GetMapping()
 //    public Iterable<Product> read(

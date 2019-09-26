@@ -24,16 +24,11 @@ public class ProductClient {
     public List<ProductUI> getAll() {
         return restOperations.exchange(productsURL, HttpMethod.GET, null, productListType).getBody();
     }
-
-    public void delete(Long id) {
-        String deleteURL = new StringBuilder(productsURL).append("/").append(id).toString();
-        restOperations.delete(deleteURL);
-    }
-
-    public ProductUI view(Long id) {
-        String viewURL = new StringBuilder(productsURL).append("/").append(id).toString();
-        return restOperations.getForObject(viewURL, ProductUI.class);
-    }
+//
+//    public void delete(Long id) {
+//        String deleteURL = new StringBuilder(productURL).append("/").append(id).toString();
+//        restOperations.delete(deleteURL);
+//    }
 //
 //    public int countAll() {
 //        return restOperations.getForEntity(productURL + "/count", Integer.class).getBody();

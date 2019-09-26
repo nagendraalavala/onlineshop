@@ -30,6 +30,11 @@ public class AppUserController {
         return "viewuser";
     }
 
+//    @DeleteMapping("/appusers")
+//    public String deleteUser(Map<String,Object> model, @RequestParam)
+//
+
+
     @GetMapping("/appusers/delete/{id}")
     public String deleteUser(Map<String,Object> model, @PathVariable Long id) {
         appUserClient.delete(id);

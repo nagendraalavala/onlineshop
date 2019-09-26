@@ -6,7 +6,5 @@ spring:
 logging.level:
   root: WARN
 
-appusers.ms.url: http://localhost:8081/appusers
-products.ms.url: http://localhost:8082/products
-transactions.ms.url: http://localhost:8083/transactions
+
 

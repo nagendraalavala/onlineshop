@@ -42,4 +42,5 @@ public class OnlineshopApplication {
 	public TransactionClient transactionClient(RestOperations restOperations) {
 		return new TransactionClient(transactionsURL, restOperations);
 	}
+
 }

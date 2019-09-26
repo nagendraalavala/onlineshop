@@ -29,16 +29,15 @@ public class RootController {
         return "home";
     }
 
-
-//    @GetMapping("/setup")
-//    public String setupDatabase(Map<String, Object> model, AppUserInitialList appUserInitialList, ProductInitialList productInitialList, TransactionInitialList transactionInitialList) {
-//        appUserInitialList.asList().forEach(appUserClient::create);
-//        productInitialList.asList().forEach(productClient::create);
-//        transactionInitialList.asList().forEach(transactionClient::create);
-//        model.put("appusers", appUserClient.getAll());
-//        model.put("products", productClient.getAll());
-//        model.put("transactions", transactionClient.getAll());
-//        return "setup";
-//    }
+    @GetMapping("/setup")
+    public String setupDatabase(Map<String, Object> model, AppUserInitialList appUserInitialList, ProductInitialList productInitialList, TransactionInitialList transactionInitialList) {
+        appUserInitialList.asList().forEach(appUserClient::create);
+        productInitialList.asList().forEach(productClient::create);
+        transactionInitialList.asList().forEach(transactionClient::create);
+        model.put("appusers", appUserClient.getAll());
+        model.put("products", productClient.getAll());
+        model.put("transactions", transactionClient.getAll());
+        return "setup";
+    }
 
 }
