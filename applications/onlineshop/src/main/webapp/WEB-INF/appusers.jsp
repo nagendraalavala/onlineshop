@@ -45,7 +45,7 @@
 <html lang="${language}">
 <head>
     <meta charset="utf-8">
-    <title>Transactions</title>
+    <title>App Users</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -103,8 +103,7 @@
                 <td> ${appuser.email} </td>
                 <td> ${appuser.password} </td>
                 <td> ${appuser.address} </td>
-                <td><a href="/appusers/delete/${appuser.id}"><i
-                            class="icon-trash"></i></a></td>
+                <td><a href="/appusers/delete/${appuser.id}"><i class="icon-trash"></i></a></td>
 
 
             </tr>

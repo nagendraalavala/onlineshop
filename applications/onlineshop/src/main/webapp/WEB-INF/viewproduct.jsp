@@ -45,7 +45,7 @@
 <html lang="${language}">
 <head>
     <meta charset="utf-8">
-    <title>Products</title>
+    <title>Product Details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -72,42 +72,25 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">onlineshop</a>
+            <a class="brand" href="/">onlineshop</a>
         </div>
     </div>
 </div>
 
 <div class="container">
 
-    <h1>products</h1>
-    <table class="table table-striped table-bordered">
+    <h1>${viewproduct.pdname}</h1>
+    <p><b><fmt:formatNumber value = "${viewproduct.pdcost}" type = "currency"/></b></p>
+    <p><em>${viewproduct.pddescp}</em></p>
+    <p>${viewproduct.pdquantity} left in stock</p>
+
+    <a href="/cart/add/${viewproduct.id}"><button >Add To Cart</button></a>
 
 
-        <thead>
-        <tr>
-            <td><b>Category</b></td>
-            <td><b>Product Name</b></td>
-            <td><b>Cost</b></td>
-            <td><b>Description</b></td>
-            <td><b>Quantity</b></td>
 
 
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${requestScope.products}" var="product">
-            <tr>
-                <td><a href="/products/${product.id}"> ${product.pdname} </a></td>
-                <td> ${product.category} </td>
-                <td> ${product.pdcost} </td>
-                <td> ${product.pddescp} </td>
-                <td> ${product.pdquantity} </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+
 
 </div>
 <!-- /container -->

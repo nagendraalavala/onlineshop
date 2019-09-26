@@ -66,7 +66,7 @@ public class ProductUI {
     }
 
     public void setId(Long id) {
-        id = id;
+        this.id = id;
     }
 
 }

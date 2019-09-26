@@ -31,9 +31,6 @@ public class AppUserClient {
         return restOperations.exchange(appUsersURL, HttpMethod.GET, null, appUserListType).getBody();
     }
 
-
-
-
     public AppUserUI view(Long id) {
         String viewURL = new StringBuilder(appUsersURL).append("/").append(id).toString();
         return restOperations.getForObject(viewURL, AppUserUI.class);

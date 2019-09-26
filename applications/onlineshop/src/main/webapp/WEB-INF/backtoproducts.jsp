@@ -5,7 +5,7 @@
 </head>
 <body>
     <%
-        String redirectURL = "/appusers";
+        String redirectURL = "/products";
         response.sendRedirect(redirectURL);
     %>
 </body>

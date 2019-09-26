@@ -45,7 +45,7 @@
 <html lang="${language}">
 <head>
     <meta charset="utf-8">
-    <title>Products</title>
+    <title>App Users</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -72,7 +72,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
             </a>
             <a class="brand" href="#">onlineshop</a>
         </div>
@@ -81,34 +80,25 @@
 
 <div class="container">
 
-    <h1>products</h1>
+    <h1>Cart</h1>
     <table class="table table-striped table-bordered">
 
 
         <thead>
         <tr>
-            <td><b>Category</b></td>
             <td><b>Product Name</b></td>
             <td><b>Cost</b></td>
-            <td><b>Description</b></td>
-            <td><b>Quantity</b></td>
-
-
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${requestScope.products}" var="product">
+        <c:forEach items="${cart.items}" var="product">
             <tr>
-                <td><a href="/products/${product.id}"> ${product.pdname} </a></td>
-                <td> ${product.category} </td>
+                <td>${product.pdname}</td>
                 <td> ${product.pdcost} </td>
-                <td> ${product.pddescp} </td>
-                <td> ${product.pdquantity} </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
-
 </div>
 <!-- /container -->
 </body>
