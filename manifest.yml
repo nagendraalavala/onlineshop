@@ -6,23 +6,24 @@ applications:
       - route: PRO-appusers-ms.apps.pcf.paltraining.perficient.com
     services:
       - appusers-ms-database
+      - service-registry
   - name: products-ms
     path: applications/products-ms/build/libs/products-ms-1.0-SNAPSHOT.jar
     routes:
       - route: PRO-products-ms.apps.pcf.paltraining.perficient.com
     services:
       - products-ms-database
+      - service-registry
   - name: transactions-ms
     path: applications/transactions-ms/build/libs/transactions-ms-1.0-SNAPSHOT.jar
     routes:
       - route: PRO-transactions-ms.apps.pcf.paltraining.perficient.com
     services:
       - transactions-ms-database
+      - service-registry
   - name: onlineshop
     path: applications/onlineshop/build/libs/onlineshop-1.0-SNAPSHOT.war
     routes:
       - route: PRO-onlineshop.apps.pcf.paltraining.perficient.com
-    env:
-      APPUSERS_MS_URL: http://PRO-appusers-ms.apps.pcf.paltraining.perficient.com/appusers
-      PRODUCTS_MS_URL: http://PRO-products-ms.apps.pcf.paltraining.perficient.com/products
-      TRANSACTIONS_MS_URL: http://PRO-transactions-ms.apps.pcf.paltraining.perficient.com/transactions
+    services:
+      - service-registry

@@ -3,6 +3,7 @@ package com.perficient.onlineshop.appuserui;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestOperations;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
@@ -38,23 +39,22 @@ public class AppUserClient {
         String viewURL = new StringBuilder(appUsersURL).append("/").append(id).toString();
         return restOperations.getForObject(viewURL, AppUserUI.class);
     }
-//
-//    public int countAll() {
-//        return restOperations.getForEntity(appUserURL + "/count", Integer.class).getBody();
-//    }
-//
-//    public List<AppUserUI> findAll() {
-//        String URI = UriComponentsBuilder.fromUriString(appUserURL).toUriString();
-//        return restOperations.exchange(URI, HttpMethod.GET, null, appUserListType).getBody();
-//    }
-//
-//    public List<AppUserUI> findRange(String field, String key) {
-//        String URI = UriComponentsBuilder.fromUriString(appUserURL)
-//                .queryParam("field", field)
-//                .queryParam("key", key)
-//                .toUriString();
-//        return restOperations.exchange(URI, HttpMethod.GET, null, appUserListType).getBody();
-//    }
+
+   /* public int countAll() {
+        return restOperations.getForEntity(appUsersURL + "/count", Integer.class).getBody();
+    }
+
+    public List<AppUserUI> findAll() { String URI = UriComponentsBuilder.fromUriString(appUsersURL).toUriString();
+       return restOperations.exchange(URI, HttpMethod.GET, null, appUserListType).getBody();
+   }
+
+    public List<AppUserUI> findRange(String field, String key) {
+        String URI = UriComponentsBuilder.fromUriString(appUsersURL)
+                .queryParam("field", field)
+                .queryParam("key", key)
+                .toUriString();
+        return restOperations.exchange(URI, HttpMethod.GET, null, appUserListType).getBody();
+    }*/
 }
 
 
